@@ -43,7 +43,7 @@ SECRET_KEY = "django-insecure-a9-5fu#511#@la^zl76ivr1)h+51c*_&9=g_wzxwneswjoijd-
 DEBUG = False
 
 # ALLOWED_HOSTS = []
-ALLOWED_HOSTS = ['192.168.1.22', '127.0.0.1', 'localhost','0.0.0.0','192.168.1.5',"https://news-1-b6cl.onrender.com"]
+ALLOWED_HOSTS = ['192.168.1.22', '127.0.0.1', 'localhost','0.0.0.0','192.168.1.5',"news-1-b6cl.onrender.com"]
 CORS_ALLOW_ALL_ORIGINS = True
 
 # DEBUG = env.bool("DEBUG", default=False)
