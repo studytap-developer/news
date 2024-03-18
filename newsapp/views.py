@@ -52,13 +52,13 @@ class NewsViewSet(ViewSet):
                     links = col.find_all('a')
                     for link in links:
                         if 'href' in link.attrs:
-                            image = col.find('img')
-                            image_url = image['src'] if image else None
+                          
+                          
                             notifications.append({
                                 'source': "JNTUH",
                                 'title': link.text.strip(),
                                 'link': link['href'],
-                                 'media_url': image_url if image_url else None,
+                                
                             })
         
         return Response(notifications, status=status.HTTP_200_OK)
