@@ -37,9 +37,31 @@ class NewsViewSet(ViewSet):
                     })
 
         return Response(notifications, status=status.HTTP_200_OK)
-
-
-    
+    @action(detail=False, methods=['get'])
+    def jntuh_notifications(self, request):
+        url = settings.COLLEGE_NEWS_SOURCE_URLS.get("JNTUH", "")
+        response = requests.get(url)
+        soup = BeautifulSoup(response.text, 'html.parser')
+        notifications = []
+        table = soup.find('table', class_='tableborder')
+        if table:
+            rows = table.find_all('tr')
+            for row in rows:
+                cols = row.find_all('td')
+                for col in cols:
+                    links = col.find_all('a')
+                    for link in links:
+                        if 'href' in link.attrs:
+                            image = col.find('img')
+                            image_url = image['src'] if image else None
+                            notifications.append({
+                                'source': "JNTUH",
+                                'title': link.text.strip(),
+                                'link': link['href'],
+                                 'media_url': image_url if image_url else None,
+                            })
+        
+        return Response(notifications, status=status.HTTP_200_OK)
 
 
     
