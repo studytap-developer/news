@@ -24,4 +24,11 @@ from newsapp import views
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('api/', include(router.urls)),
+    # Custom endpoints for fetching notifications asynchronously
+    # path('api/news/jntuk-notifications/', NewsViewSet.as_view({'get': 'jntuk_notifications'}), name='jntuk_notifications'),
+    # path('api/news/jntuh-notifications/', NewsViewSet.as_view({'get': 'jntuh_notifications'}), name='jntuh_notifications'),
+    # path('api/news/list-news/', NewsViewSet.as_view({'get': 'list_news'}), name='list_news'),
+    # path('api/news/list-tspsc-notifications/', NewsViewSet.as_view({'get': 'list_tspsc_notifications'}), name='list_tspsc_notifications'),
+    # path('api/news/jee-notifications/', NewsViewSet.as_view({'get': 'jee_notifications'}), name='jee_notifications'),
+
 ]
