@@ -180,4 +180,8 @@ EDUCATION_RSS_FEED_URLS = {
 # TSPSC notifications URL
 TSPSC_NOTIFICATIONS_URL = 'https://websitenew.tspsc.gov.in/notifications'
 
+# JEE notifications URL
 JEE_NOTIFICATIONS_URL = {"JEE":'https://jeemain.nta.nic.in/'}
+
+# TSPSC notifications URL
+UPSC_NOTIFICATIONS_URL={"UPSC":"https://upsc.gov.in/whats-new"}
